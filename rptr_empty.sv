@@ -1,11 +1,4 @@
-/*6.5 rptr_empty.v - Read pointer & empty generation logic
-This module encloses all of the FIFO logic that is generated within the read clock domain (except synchronizers).
-The read pointer is a dual n-bit Gray code counter. The n-bit pointer ( rptr ) is passed to the write clock domain
-through the sync_r2w module. The (n-1)-bit pointer ( raddr ) is used to address the FIFO buffer.
-The FIFO empty output is registered and is asserted on the next rising rclk edge when the next rptr value equals
-the synchronized wptr value. All module outputs are registered for simplified synthesis using time budgeting. This
-module is entirely synchronous to the rclk for simplified static timing analysis.
-*/
+//rptr_empty.sv
 module rptr_empty #(parameter ADDRSIZE = 4)
  (output reg rempty,
  output [ADDRSIZE-1:0] raddr,
