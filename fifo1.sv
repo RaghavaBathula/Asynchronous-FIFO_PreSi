@@ -1,11 +1,4 @@
-/* 
-fifo1.v - FIFO top-level module
-The top -level FIFO module is a parameterized FIFO design with all sub-blocks instantiated using the recommended
-practice of doing named port connections. Another common coding practice is to give the top-level module
-instantiations the same name as the module name. This is done to facilitate debug, since referencing module names
-in a hierarchical path will be straight forward if the instance names match the module names. 
-*/
-
+//fifo1.sv
 module fifo1 #(parameter DSIZE = 8, parameter ASIZE = 4)
 
 (output [DSIZE-1:0] rdata,
