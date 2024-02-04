@@ -1,5 +1,5 @@
 //fifo1.sv
-module fifo1 #(parameter DSIZE = 8, parameter ASIZE = 4)
+module fifo1 #(parameter DSIZE = 8, parameter ASIZE = 9)
 
 (output [DSIZE-1:0] rdata,
  output wfull,
