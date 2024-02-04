@@ -1,14 +1,4 @@
-/*
-6.6 wptr_full.v - Write pointer & full generation logic
-This module encloses all of the FIFO logic that is generated within the write clock domain (except synchronizers).
-The write pointer is a dual n-bit Gray code counter. The n-bit pointer ( wptr ) is passed to the read clock domain
-through the sync_w2r module. The (n-1)-bit pointer ( waddr ) is used to address the FIFO buffer.
-The FIFO full output is registered and is asserted on the next rising wclk edge when the next modified wgnext
-value equals the synchronized and modified wrptr2 value (except MSBs). All module outputs are registered for
-simplified synthesis using time budgeting. This module is entirely synchronous to the wclk for simplified static
-timing analysis.
-*/
-
+//wptr_full.sv
 module wptr_full #(parameter ADDRSIZE = 4)
  (output reg wfull,
  output [ADDRSIZE-1:0] waddr,
