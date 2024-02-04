@@ -1,14 +1,4 @@
-/*
-6.2 fifomem.v - FIFO memory buffer
-The FIFO memory buffer is typically an instantiated ASIC or FPGA dual-port, synchronous memory device. The
-memory buffer could also be synthesized to ASIC or FPGA registers using the RTL code in this module.
-About an instantiated vendor RAM versus a Verilog-declared RAM, the Synopsys DesignWare team did internal
-analysis and found that for sizes up to 256 bits, there is no lost area or performance using the Verilog-declared
-RAM compared to an instantiated vendor RAM[4].
-If a vendor RAM is instantiated, it is highly recommended that the instantiation be done using named port
-connections.
-*/
-
+//fifomem.sv
 module fifomem #(parameter DATASIZE = 32, // Memory data word width
  parameter ADDRSIZE = 9) // Number of mem address bits
  (output [DATASIZE-1:0] rdata, //Data_out
