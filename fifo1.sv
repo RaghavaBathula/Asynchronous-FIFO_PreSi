@@ -1,5 +1,12 @@
-//fifo1.sv
-module fifo1 #(parameter DSIZE = 8, parameter ASIZE = 9)
+/* 
+fifo1.sv - FIFO top-level module
+The top -level FIFO module is a parameterized FIFO design with all sub-blocks instantiated using the recommended
+practice of doing named port connections. Another common coding practice is to give the top-level module
+instantiations the same name as the module name. This is done to facilitate debug, since referencing module names
+in a hierarchical path will be straight forward if the instance names match the module names. 
+*/
+
+module async_fifo1 #(parameter DSIZE = 8, parameter ASIZE = 9)
 
 (output [DSIZE-1:0] rdata,
  output wfull,
@@ -11,8 +18,8 @@ module fifo1 #(parameter DSIZE = 8, parameter ASIZE = 9)
  wire [ASIZE-1:0] waddr, raddr;
  wire [ASIZE:0] wptr, rptr, wq2_rptr, rq2_wptr;
  
- sync_r2w sync_r2w (.wq2_rptr(wq2_rptr), .rptr(rptr), .wclk(wclk), .wrst_n(wrst_n));
- sync_w2r sync_w2r (.rq2_wptr(rq2_wptr), .wptr(wptr), .rclk(rclk), .rrst_n(rrst_n));
+ sync_r2w #(ASIZE) sync_r2w (.wq2_rptr(wq2_rptr), .rptr(rptr), .wclk(wclk), .wrst_n(wrst_n));
+ sync_w2r #(ASIZE) sync_w2r (.rq2_wptr(rq2_wptr), .wptr(wptr), .rclk(rclk), .rrst_n(rrst_n));
  fifomem #(DSIZE, ASIZE) fifomem (.rdata(rdata), .wdata(wdata), .waddr(waddr), .raddr(raddr), .wclken(winc), .wfull(wfull), .wclk(wclk));
  rptr_empty #(ASIZE) rptr_empty (.rempty(rempty), .raddr(raddr), .rptr(rptr), .rq2_wptr(rq2_wptr), .rinc(rinc), .rclk(rclk), .rrst_n(rrst_n));
  wptr_full #(ASIZE) wptr_full (.wfull(wfull), .waddr(waddr), .wptr(wptr), .wq2_rptr(wq2_rptr), .winc(winc), .wclk(wclk), .wrst_n(wrst_n));

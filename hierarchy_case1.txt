@@ -1,0 +1,64 @@
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               asyncf_case1                -     @468 
+#   env                      asyncf_env                  -     @485 
+#     agt_mdl_fifo           uvm_tlm_analysis_fifo #(T)  -     @680 
+#       analysis_export      uvm_analysis_imp            -     @719 
+#       get_ap               uvm_analysis_port           -     @711 
+#       get_peek_export      uvm_get_peek_imp            -     @695 
+#       put_ap               uvm_analysis_port           -     @703 
+#       put_export           uvm_put_imp                 -     @687 
+#     agt_scb_fifo           uvm_tlm_analysis_fifo #(T)  -     @633 
+#       analysis_export      uvm_analysis_imp            -     @672 
+#       get_ap               uvm_analysis_port           -     @664 
+#       get_peek_export      uvm_get_peek_imp            -     @648 
+#       put_ap               uvm_analysis_port           -     @656 
+#       put_export           uvm_put_imp                 -     @640 
+#     i_agt                  asyncf_up_agent             -     @496 
+#       drv                  asyncf_driver               -     @884 
+#         rsp_port           uvm_analysis_port           -     @899 
+#         seq_item_port      uvm_seq_item_pull_port      -     @891 
+#       mon                  asyncf_up_monitor           -     @907 
+#         ap                 uvm_analysis_port           -     @916 
+#       sqr                  asyncf_up_sequencer         -     @775 
+#         rsp_export         uvm_analysis_export         -     @782 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @876 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     m_virtual_asyncf_seqr  asyncf_virtual_sequencer    -     @524 
+#       rsp_export           uvm_analysis_export         -     @531 
+#       seq_item_export      uvm_seq_item_pull_imp       -     @625 
+#       arbitration_queue    array                       0     -    
+#       lock_queue           array                       0     -    
+#       num_last_reqs        integral                    32    'd1  
+#       num_last_rsps        integral                    32    'd1  
+#     mdl                    asyncf_model                -     @510 
+#       ap                   uvm_analysis_port           -     @942 
+#       port                 uvm_blocking_get_port       -     @934 
+#     mdl_scb_fifo           uvm_tlm_analysis_fifo #(T)  -     @727 
+#       analysis_export      uvm_analysis_imp            -     @766 
+#       get_ap               uvm_analysis_port           -     @758 
+#       get_peek_export      uvm_get_peek_imp            -     @742 
+#       put_ap               uvm_analysis_port           -     @750 
+#       put_export           uvm_put_imp                 -     @734 
+#     o_agt                  asyncf_down_agent           -     @503 
+#       drv                  asyncf_down_driver          -     @1067
+#         rsp_port           uvm_analysis_port           -     @1082
+#         seq_item_port      uvm_seq_item_pull_port      -     @1074
+#       mon                  asyncf_down_monitor         -     @1060
+#         ap                 uvm_analysis_port           -     @1092
+#       sqr                  asyncf_down_sequencer       -     @951 
+#         rsp_export         uvm_analysis_export         -     @958 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @1052
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     scb                    asyncf_scoreboard           -     @517 
+#       act_port             uvm_blocking_get_port       -     @1113
+#       exp_port             uvm_blocking_get_port       -     @1105
+# ------------------------------------------------------------------
